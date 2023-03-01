@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* <ul> tag */
+.cheeses {
+    display: flex;
+    gap: 10px;
+}
+
+/* <li> tag */
+.cheese-item {
+    width: 25%;
+    list-style-type: none;
+    background-color: #fed053;
+    border-radius: 20px;
+    transition: 0.2s background-color ease;
+}
+
+/* .cheese-item:hover .cheese-item__image {
+    transform: scale(1.2);
+} */
+
+/* <img> tag */
+.cheese-item__image {
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 0.2s transform ease;
+}
+
+.cheese-item__content {
+    padding: 15px;
+}
+
+.cheese-item__description{
+    font-weight: normal;
+}
+
+.cheese-item__link{
+    color: #1e2138;
+    text-decoration: none;
+    transition: 0.2s color ease;
+}
+
+.cheese-item:hover {
+    background-color: #f95700;
+}
+
+.cheese-item__link:hover {
+    color: white;  
+}
