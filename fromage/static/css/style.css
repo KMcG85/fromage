@@ -5,6 +5,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.navbar {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #fed053;
+    border-radius: 0.25rem;
+    padding: 1rem;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

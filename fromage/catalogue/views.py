@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Cheese, Review
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Cheese, Review, Customer
 
 # Create your views here.
 
@@ -43,3 +43,24 @@ def cheese_details(request, id):
     }
 
     return render(request, "catalogue/cheese_details.html", context)
+
+def customer(request, id):
+
+    context = {
+        "customer": get_object_or_404(Customer, id=id),
+    }
+
+    return render(request, "catalogue/customer.html", context)
+
+def add_review(request, id):
+    if request.method == "POST":
+        customer = get_object_or_404(Customer, id=id)
+        cheese = request.POST.get("cheese")
+        cheese_obj = get_object_or_404(Cheese, id=int(cheese))
+        rating = request.POST.get("rating")
+        recommend = True
+
+        review = Review(reviewer=customer, cheese=cheese_obj, rating=int(rating), recommend=recommend)
+        review.save()
+        return redirect(request.POST.get("redirect_url"))
+
